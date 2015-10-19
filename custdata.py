@@ -11,7 +11,7 @@ fake = Faker()
 with open('large.csv','w') as f1:
     writer=csv.writer(f1, delimiter=',',lineterminator='\n',)
     writer.writerow(['rownum'] +['dunno'] + ['CC'] + ['Employer'] + ['Custemail'] + ['name'] \
-	+ ['occupation'] + ['address_street'] + ['DOB']+['previous address_city_state_zip']+ ['altcustomer_name'] \
+	+ ['occupation'] + ['address_street'] + ['DOB']+['previous_address_city_state_zip']+ ['altcustomer_name'] \
 	+ ['altcustomer_occupation']   + ['altcustomer_dob'] + ['ssn'] + ['phone']  + \
 	['AccountID'] + ['PepFlag'] + ['altcustomerssn'] + ['demarketed_customer_flag'] + \
 	['SAR_flag'] + ['nolonger_a_customer'] + ['closed_account'] \
