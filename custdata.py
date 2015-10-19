@@ -30,9 +30,7 @@ with open('large.csv','w') as f1:
 		+ [randrange(100000,100000000,1)] + \
 		[max((randrange(0,101,1)-99),0)] + \
 		[(randrange(101,1000,1),randrange(10,100,1),randrange(1000,10000,1))]\
-		+[max((randrange(0,101,1)-99),0)]+[max((randrange(0,101,1)-99),0)] +[max((randrange(0,101,1)-99),0)] \
-		+[items] + [shuffle(items)] +[occupationratings] \
-		+[shuffle(occupationratings)] 
+		+[max((randrange(0,101,1)-99),0)]+[max((randrange(0,101,1)-99),0)] +[max((randrange(0,101,1)-99),0)] 
 	writer.writerow(row)
 		
 		
