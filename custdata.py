@@ -12,7 +12,7 @@ with open('large.csv','w') as f1:
 	+ ['altcustomer_occupation']   + ['altcustomer_dob'] + ['ssn'] + ['phone']  + \
 	['AccountID'] + ['PepFlag'] + ['altcustomerssn'] + ['demarketed_customer_flag'] + \
 	['SAR_flag'] + ['nolonger_a_customer'] + ['closed_account'] +['High_risk_flag'] +['Risk_rating'])
-    for i in range(500):   
+    for i in range(50000000):   
 		row = [i] + [10] + [gen_data.cc_number()]+[gen_data.create_company_name()] + \
 		[gen_data.create_email()]+[gen_data.create_name()] +[gen_data.create_job_title()] + \
 		[gen_data.create_city_state_zip()] + [gen_data.create_birthday(min_age=2, max_age=85)] + \
