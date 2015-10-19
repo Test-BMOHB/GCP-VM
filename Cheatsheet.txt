@@ -1,0 +1,49 @@
+TRANSFER FILES FROM VM  
+to transfer a file from a VM to the gs storage bucket use a parallel upload
+gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp synthetic_wires_data2_replication_1 gs://mega_man_lee
+or plain vanilla 
+https://cloud.google.com/storage/docs/gsutil/commands/cp
+
+VM INSTALLATIONS
+UPDATE THE VM!!!!!!!!!!!!!!
+sudo apt-get update
+
+Python PIP
+sudo apt-get install python-pip
+Install GIT
+sudo apt-get install git
+BARNUM
+at the vm cmd line...
+git clone https://github.com/chris1610/barnum-proj.git 
+install it: sudo python setup.py install
+FAKER
+git clone https://github.com/joke2k/faker.git
+install it: sudo python setup.py install
+See the beginning of a csv file with out printing the entire thing
+head this.csv
+Counting number of records
+wc -l this.csv
+
+kill a job in Big query
+https:  /www.googleapis.com/bigquery/v2/bigqueryhellodashboard/bigqueryhellodashboard/jobs//cancel
+
+Check Python Modules
+Python/Help/modules
+
+Remove a Dir in the VM cmd line
+rm -rf mydir
+List all elements
+ls -al
+SETTING UP A NEW VMInstall and run the back-end database
+
+Enter these commands to install and run MongoDB. You can use the keyboard to copy and paste each command line. Click Done when you finish entering all the commands to close the SSH window.
+
+Update packages and install MongoDB. When asked if you want to continue, type 'Y'.
+sudo apt-get update
+sudo apt-get install mongodb
+The MongoDB service started when you installed it. You must stop it so you can change how it runs.
+sudo service mongodb stop
+Create a directory for MongoDB and then run the MongoDB service in the background on port 80.
+sudo mkdir $HOME/db ; sudo mongod --dbpath $HOME/db --port 80 --fork \
+--logpath /var/tmp/mongodb
+After you enter the final command, click Done and then confirm that you want to leave the page to close the SSH browser window.
