@@ -30,10 +30,13 @@ sudo bash
 apt-get update && apt-get upgrade --yes
 apt-get install tmux --yes
 tmux
-To leave tmux, use CTRL+D, to detach it and keep it running, or exit to close the shell session. If your connection is dropped, reopen the ssh window and reattach to tmux using:
+To leave tmux, use CTRL+D, to detach it and keep it running, or exit to close the shell session. 
+If your connection is dropped, reopen the ssh window and reattach to tmux using:
 
 sudo tmux attach-session -t 0
 CRON JOBS TUTORIAL
+How to view cron jobs..
+ grep CRON /var/log/syslog
 https://www.howtoforge.com/a-short-introduction-to-cron-jobs
 https://help.ubuntu.com/community/CronHowto
 File Name to Write: /tmp/crontab.t2M33c/crontab M-D  
