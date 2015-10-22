@@ -1,6 +1,8 @@
 TRANSFER FILES FROM VM  
 to transfer a file from a VM to the gs storage bucket use a parallel upload
 gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp yourfilename gs://yourbuckname
+Appends DateTime Stamp from created file to Storage:
+gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp /yourpath/yourfilename gs://customer_data/yourfilename_$(date +\%m\%d\%Y\%H\%M\%S).yourfilenameExtension
 or plain vanilla 
 https://cloud.google.com/storage/docs/gsutil/commands/cp
 
