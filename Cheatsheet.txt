@@ -9,7 +9,8 @@ Similarly, you can download text files from a bucket into your VM by doing:
 
 gsutil cp gs://my_bucket/*.txt .
 
-
+GROMING DATA SETS IN NOTPAD++ USING REGEX TO FIND AND REPLACE
+http://stackoverflow.com/questions/2467875/notepad-replace-all-regular-expression-start-of-the-line-and-end-of-the-line
 
 VM INSTALLATIONS
 UPDATE THE VM!!!!!!!!!!!!!!
