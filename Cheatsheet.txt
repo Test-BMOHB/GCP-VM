@@ -45,6 +45,7 @@ sudo tmux attach-session -t 0
 CRON JOBS TUTORIAL
 How to view cron jobs..
  grep CRON /var/log/syslog
+ ***** gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp /home/test_bmohb/faker/largetrns.csv gs://customer_data  >/dev/null 2>&1
 https://www.howtoforge.com/a-short-introduction-to-cron-jobs
 https://help.ubuntu.com/community/CronHowto
 File Name to Write: /tmp/crontab.t2M33c/crontab M-D  
