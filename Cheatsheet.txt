@@ -5,6 +5,11 @@ Appends DateTime Stamp from created file to Storage:
 gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp /yourpath/yourfilename gs://customer_data/yourfilename_$(date +\%m\%d\%Y\%H\%M\%S).yourfilenameExtension
 or plain vanilla 
 https://cloud.google.com/storage/docs/gsutil/commands/cp
+Similarly, you can download text files from a bucket into your VM by doing:
+
+gsutil cp gs://my_bucket/*.txt .
+
+
 
 VM INSTALLATIONS
 UPDATE THE VM!!!!!!!!!!!!!!
