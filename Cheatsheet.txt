@@ -33,6 +33,8 @@ tmux
 To leave tmux, use CTRL+D, to detach it and keep it running, or exit to close the shell session. If your connection is dropped, reopen the ssh window and reattach to tmux using:
 
 sudo tmux attach-session -t 0
+CRON JOBS TUTORIAL
+https://www.howtoforge.com/a-short-introduction-to-cron-jobs
 
 kill a job in Big query
 https:  /www.googleapis.com/bigquery/v2/bigqueryhellodashboard/bigqueryhellodashboard/jobs//cancel
