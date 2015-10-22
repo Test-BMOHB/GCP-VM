@@ -36,6 +36,7 @@ sudo tmux attach-session -t 0
 CRON JOBS TUTORIAL
 https://www.howtoforge.com/a-short-introduction-to-cron-jobs
 https://help.ubuntu.com/community/CronHowto
+File Name to Write: /tmp/crontab.t2M33c/crontab M-D  
 kill a job in Big query
 https:  /www.googleapis.com/bigquery/v2/bigqueryhellodashboard/bigqueryhellodashboard/jobs//cancel
 
