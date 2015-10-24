@@ -27,6 +27,9 @@ sudo apt-get install python-pip
 Install GIT
 at the vm cmd line...
 sudo apt-get install git
+Clone this repository
+at the command line...
+git clone https://github.com/Test-BMOHB/GCP-VM.git
 Install BARNUM
 at the vm cmd line...
 git clone https://github.com/chris1610/barnum-proj.git 
@@ -39,7 +42,7 @@ git clone https://github.com/joke2k/faker.git
 install it: sudo python setup.py install
 Clone this repository
 at the command line...
-git clone
+git clone https://github.com/Test-BMOHB/GCP-VM.git
 
 Install a tumux instance to prevent a total loss upon SSH disconnection
 Install a TMUX so your vm jobs do not die if you get disconnected
@@ -60,15 +63,17 @@ https://help.ubuntu.com/community/CronHowto
 
 Learn Nano!!!!!!!!!
 Nano is an editor used in the VM cloud...why is it important?  BC when working with VMs or Servers you have to move files 
-around and with out windows word or word pad it can be a pain.
+around and occasionally make changes...and with out windows word or word pad it can be a pain.  The best way to get a file into the VM is to post it to github and then clone it into the VM...you could do FTP/SFTP etc...but its easier to open the doc in nano make a small change...
 http://www.nano-editor.org/dist/v2.2/nano.html#Introduction
 
-
-
-
-
-
-
+Time to run a python file and create a table 
+Type DIR and make sure you have the file random_rdc_trans.py  it should have been cloned into the VM 
+at the command line type...
+python random_rdc_trans.py
+and it should run...the output will be a csv file..large_rdc.csv
+it will generate 1MM fake remote deposit capture transactions...from here move it into the storage browser
+gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp /yourpath/yourfilename gs://customer_data/yourfilename_$(date +\%m\%d\%Y\%H\%M\%S).yourfilenameExtension
+once its in the storage browser you can move it into the Big Query and query it!!
 
 Tips and tricks......
 See the beginning of a csv file with out printing the entire thing
@@ -77,7 +82,8 @@ Counting number of records
 wc -l this.csv
 LIST all elements in the dir
 ls -al
-
+Print all the contents
+cat print some_filename
 
 CRON JOBS TUTORIAL
 How to view cron jobs..
