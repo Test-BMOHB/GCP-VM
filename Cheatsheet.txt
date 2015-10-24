@@ -1,3 +1,4 @@
+Cool Stuff....http://googlecloudplatform.github.io/
 TRANSFER FILES FROM VM  
 to transfer a file from a VM to the gs storage bucket use a parallel upload
 gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp yourfilename gs://yourbuckname
@@ -15,23 +16,31 @@ http://stackoverflow.com/questions/2467875/notepad-replace-all-regular-expressio
 VM INSTALLATIONS
 Open a project and setup billing
 https://cloud.google.com/compute/docs/windows-quickstart
-follow the tutorial....then do the following
+read the tutorial....then do the following
 UPDATE THE VM!!!!!!!!!!!!!!
+Click on the SSH and the black window will appear at the CMD line...at the vm cmd line...
 sudo apt-get update
 
-Python PIP
+Install Python PIP
+at the vm cmd line...
 sudo apt-get install python-pip
 Install GIT
+at the vm cmd line...
 sudo apt-get install git
-BARNUM
+Install BARNUM
 at the vm cmd line...
 git clone https://github.com/chris1610/barnum-proj.git 
+if this doesnt work the VM will tell you how to install the git clone tool...follow the instructions
 go into the folder  barnum-proj(cd barnum-proj) then install it
 install it: sudo python setup.py install
 FAKER
 go into the folder  barnum-proj(cd faker) then install it
 git clone https://github.com/joke2k/faker.git
 install it: sudo python setup.py install
+Clone this repository
+at the command line...
+git clone
+
 Install a tumux instance to prevent a total loss upon SSH disconnection
 Install a TMUX so your vm jobs do not die if you get disconnected
 sudo bash
@@ -48,7 +57,12 @@ How to view cron jobs..
  ***** gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp /home/test_bmohb/faker/largetrns.csv gs://customer_data  >/dev/null 2>&1
 https://www.howtoforge.com/a-short-introduction-to-cron-jobs
 https://help.ubuntu.com/community/CronHowto
-File Name to Write: /tmp/crontab.t2M33c/crontab 
+
+Learn Nano!!!!!!!!!
+Nano is an editor used in the VM cloud...why is it important?  BC when working with VMs or Servers you have to move files 
+around and with out windows word or word pad it can be a pain.
+http://www.nano-editor.org/dist/v2.2/nano.html#Introduction
+
 
 
 
