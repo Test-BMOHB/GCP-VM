@@ -1,6 +1,6 @@
 from random import randrange
 import csv
-with open('large.csv','w') as f1:
+with open('large_rdc.csv','w') as f1:
     writer=csv.writer(f1, delimiter=',',lineterminator='\n',)
     writer.writerow(['IP'] + range(10))
     for i in range(100000000):
