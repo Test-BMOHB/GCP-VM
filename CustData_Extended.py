@@ -191,7 +191,7 @@ with open('large.csv','r') as csvinput:
 		
 		writer.writerow(row)
 		
-		for i in range(28000000):   
+		for i in range(16800000):   
 			row = next(reader)
 			rel = random.choice(python_account_ID.accountid)*max((randrange(0,10000,1)-9999),0)
 			
