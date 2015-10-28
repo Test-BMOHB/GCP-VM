@@ -1,0 +1,21 @@
+Create Schema File (use example below):
+[
+{"name": "rownum", "type": "STRING", "mode": "nullable"},
+{"name": "TXN_ROUTING_TRANSIT", "type": "STRING", "mode": "nullable"},
+{"name": "DEBIT_CREDIT_INDICATOR", "type": "STRING", "mode": "nullable"},
+{"name": "Bank", "type": "STRING", "mode": "nullable"},
+{"name": "AccountID", "type": "STRING", "mode": "nullable"},
+{"name": "Amount", "type": "STRING", "mode": "nullable"},
+{"name": "ON_US_INDICATOR", "type": "STRING", "mode": "nullable"},
+{"name": "COMPANY_NAME", "type": "STRING", "mode": "nullable"},
+{"name": "DATE_POSTED", "type": "STRING", "mode": "nullable"},
+{"name": "City_State_Zip", "type": "STRING", "mode": "nullable"},
+{"name": "ATM_FLAG", "type": "STRING", "mode": "nullable"},
+{"name": "RDCFLAG", "type": "STRING", "mode": "nullable"}
+]
+
+See Step 3 from the following link:
+https://cloud.google.com/bigquery/bq-command-line-tool-quickstart?hl=en
+
+Command Line used and work as a test:
+bq load JPKTest.Test2 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt4
