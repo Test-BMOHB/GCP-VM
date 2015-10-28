@@ -13,9 +13,15 @@ Create Schema File (use example below):
 {"name": "ATM_FLAG", "type": "STRING", "mode": "nullable"},
 {"name": "RDCFLAG", "type": "STRING", "mode": "nullable"}
 ]
+Making a new table in the BQ UI requires a file upload or a job to pull a file across from the cloud storage
+Creating a file at the command line does not and is preferred.
+$ bq mk mydataset
+
 
 See Step 3 from the following link:
 https://cloud.google.com/bigquery/bq-command-line-tool-quickstart?hl=en
 
 Command Line used and work as a test:
+bq datasetname.tablename   path/filenametoload   path/schemafile
+example
 bq load JPKTest.Test2 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt4
