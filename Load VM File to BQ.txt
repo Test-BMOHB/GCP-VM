@@ -24,4 +24,4 @@ https://cloud.google.com/bigquery/bq-command-line-tool-quickstart?hl=en
 Command Line used and work as a test:
 bq datasetname.tablename   path/filenametoload   path/schemafile
 example
-bq load JPKTest.Test2 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt4
+bq load JPKTest.Test2 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt
