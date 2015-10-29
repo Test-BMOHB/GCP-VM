@@ -25,3 +25,11 @@ Command Line used and work as a test:
 bq datasetname.tablename   path/filenametoload   path/schemafile
 example
 bq load JPKTest.Test2 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt
+
+The following bq load will allow_jagged_rows (rows with incorrect number of columns based on the schema/table) and skip the header record (skip_leading_rows):
+             bq load --allow_jagged_rows=True --skip_leading_rows=1 JPKTest.Test3 largetrnsjpk.csv /home/test_bmohb03/TestSchemaSetup.txt
+Translation: bq load --incorrect cols in file --skip header row     dataset.table filename         location of schema file
+Note:  You will need a database created within BQ, but not a table.  The statement creates the table for you (Example: JPKTest.Test3 was not created prior to execution).
+
+Additional arguments/flags for bq load can be found using the following statment within VM:
+    bq load --help
