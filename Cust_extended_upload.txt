@@ -1,0 +1,19 @@
+Schema for cust_extended.csv file
+
+rownum:String,dunno:String,CC:String,Employer:String,Custemail:String,name:String,occupation:String,address_street:String,DOB:String,previous_address_city_state_zip:String
+,altcustomer_name:String,altcustomer_occupation:String,altcustomer_dob:String,ssn:String,phone:String,AccountID:String,PepFlag:String,altcustomerssn:String,
+demarketed_customer_flag:String,SAR_flag:String,nolonger_a_customer:String,closed_account:String,High_risk_flag:String,Risk_rating:String,RELATED_ACCT:String,RELATED_TYPE:String,PARTY_TYPE:String,
+PARTY_RELATION:String,PARTY_STARTDATE:String,PARTY_ENDDATE:String,LARGE_CASH_EXEMPT:String,DEMARKET_FLAG:String,DEMARKET_DATE:String,PROB_DEFAULT_RISKR:String,
+OFFICIAL_LANG_PREF:String,CONSENT_SHARING:String,PREFERRED_CHANNEL:String,PRIMARY_BRANCH_NO:String,CUSTOMER_STATUS:String,DEPENDANTS_COUNT:String,SEG_MODEL_ID
+:String,SEG_MODEL_TYPE:String,SEG_MODEL_NAME:String,SEG_MODEL_GROUP:String,SEG_M_GRP_DESC:String,SEG_MODEL_SCORE:String,ARMS_MANUFACTURER:String,AUCTION:String,
+CASHINTENSIVE_BUSINESS:String,CASINO_GAMBLING:String,CHANNEL_ONBOARDING:String,CHANNEL_ONGOING_TRANSACTIONS:String,CLIENT_NET_WORTH:String,
+COMPLEX_HI_VEHICLE:String,DEALER_PRECIOUS_METAL:String,DIGITAL_PM_OPERATOR:String,EMBASSY_CONSULATE:String,EXCHANGE_CURRENCY:String,FOREIGN_FINANCIAL_INSTITUTION:String,
+FOREIGN_GOVERNMENT:String,FOREIGN_NONBANK_FINANCIAL_INSTITUTION:String,INTERNET_GAMBLING:String,MEDICAL_MARIJUANA_DISPENSARY:String,
+MONEY_SERVICE_BUSINESS:String,NAICS_CODE:String,NONREGULATED_FINANCIAL_INSTITUTION:String,NOT_PROFIT:String,OCCUPATION2:String,PRIVATELY_ATM_OPERATOR:String,
+PRODUCTS:String,SALES_USED_VEHICLES:String,SERVICES:String,SIC_CODE:String,STOCK_MARKET_LISTING:String,THIRD_PARTY_PAYMENT_PROCESSOR:String,TRANSACTING_PROVIDER:String,
+ADDITIONAL_NAME:String,HIGH_NET_WORTH:String
+
+
+
+
+gs://customer_data_ivana/large_extended_1030.csv
