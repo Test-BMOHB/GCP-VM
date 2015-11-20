@@ -59,7 +59,7 @@ def get_snp500():
     sector_tickers = scrape_list(SITE)
     sector_ohlc = download_ohlc(sector_tickers, START, END)
     store_HDF5(sector_ohlc, 'snp500.h5')
-
+    np.savetxt(sys.stdout, h5py.File('snp500.h5')['dataname'], '%g', ',')
 
 if __name__ == '__main__':
     get_snp500()
