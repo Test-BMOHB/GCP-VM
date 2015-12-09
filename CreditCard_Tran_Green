@@ -1,0 +1,35 @@
+import python_account_ID
+import Python_aba_transit_numbers
+from random import randrange
+from random import random
+import random 
+from random import shuffle
+from faker import Faker
+from barnum import gen_data
+import csv
+fake = Faker()
+
+Merchant_Category = ['Cat 1','Cat 2','Cat 3']
+Transaction_Type = ['Charge', 'Cash Advance']
+
+with open('CreditCard_Transaction.csv','w') as f1:
+
+    writer=csv.writer(f1, delimiter=',',lineterminator='\n',)
+    writer.writerow(['rownum'] +['Account_Number'] + ['Merchant_Name']+['Merchant_Category']+\
+	['Post_Date'] + ['Transaction_Date'] + ['Transaction_Type'] + \
+	['Merchant_City']+ ['Merchant_State']+['Merchant_Zip'])
+	
+    for i in range(100):   
+		row = [i] +[random.choice(python_account_ID.accountid)] +\
+		[gen_data.create_company_name()] +[random.choice(Merchant_Category)] \
+		
+		date1= [gen_data.create_date(past=True)]
+		date2=[gen_data.create_date(past=True)]
+		
+		if date1 < date2:
+			row.append(date2)
+		else: 
+			row.append(date1)
+		
+		row.extend([random.choice(Transaction_Type),gen_data.create_city_state_zip()])
+		writer.writerow(row)
