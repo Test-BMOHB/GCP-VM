@@ -986,11 +986,14 @@ with open('CreditCardTrans_PerAccount.csv','w') as f1:
 	
 	for i in range(10):
 			acct=random.choice(python_account_ID.accountid)
-			limit = max(max((randrange(0,100,1)-99),0)* randrange(25000,50000,1000),randrange(5,25000,1000))
+			limit = max(max((randrange(0,101,1)-99),0)* randrange(25000,50000,1000),randrange(5,25000,1000))
 			usedAmt = 0
 			for j in range(50):
 				dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-				tmpAmt = max(max((randrange(0,100,1)-99),0)* randrange(0,limit,(limit/10))*(-1),randrange(0,limit,(limit/100)))
+				tmpAmt = max((randrange(1,3,1)-1),0)* randrange(0,limit,(limit/10))*(-1)
+				print tmpAmt
+				if tmpAmt == 0:
+					tmpAmt = randrange(0,limit,(limit/100))
 				usedAmt = usedAmt + tmpAmt
 				cat = random.choice(Merchant_Category)
 				tranType = ''
@@ -1008,7 +1011,7 @@ with open('CreditCardTrans_PerAccount.csv','w') as f1:
 				count = count + 1
 				writer.writerow(row)
 			if usedAmt < limit * (-1):
-				row = [str(count)+'_'+dt]+ acct + ['']+['']+['']
+				row = [str(count)+'_'+dt]+ [acct] + ['']+['']+['']
 				date1=gen_data.create_date(past=True)
 				date2=date1-timedelta(days=1)
 				row.extend([date1, date2, 'Refund','',limit,abs(limit-abs(usedAmt))*(-1)])
