@@ -984,16 +984,15 @@ with open('CreditCardTrans_PerAccount.csv','w') as f1:
 	writer=csv.writer(f1, delimiter=',',lineterminator='\n',)
 	writer.writerow(['rownum']+['Account_Number']+['Merchant_Name']+['Merchant_Category_Code']+['Merchant_Category_Desc']+['Post_Date'] + ['Transaction_Date'] + ['Transaction_Type'] +['Merchant_Country']+['Credit_Limit']+['Amount'])
 	
-	for i in range(10):
+	for i in range(100000):
 			acct=random.choice(python_account_ID.accountid)
-			limit = max(max((randrange(0,101,1)-99),0)* randrange(25000,50000,1000),randrange(5,25000,1000))
+			limit = max(max((randrange(1,101,1)-99),0)* randrange(25000,50000,1000),randrange(1000,25000,1000))
 			usedAmt = 0
 			for j in range(50):
 				dt = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-				tmpAmt = max((randrange(1,3,1)-1),0)* randrange(0,limit,(limit/10))*(-1)
-				print tmpAmt
+				tmpAmt = max((randrange(1,3,1)-1),0)* randrange(1,limit,100)*(-1)
 				if tmpAmt == 0:
-					tmpAmt = randrange(0,limit,(limit/100))
+					tmpAmt = randrange(1,limit,100)
 				usedAmt = usedAmt + tmpAmt
 				cat = random.choice(Merchant_Category)
 				tranType = ''
