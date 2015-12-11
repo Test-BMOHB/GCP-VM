@@ -10,6 +10,25 @@ import csv
 from datetime import date, timedelta
 fake = Faker()
 
+#Red Transactions are defined by Merchant Category, Transaction Types and Country.
+#Merchant Category is divided into three risk categories per senor Kamin's best judgement. - % to be updated
+#As a reference was used MCC (Merchant Category Codes)
+#Just like MCC - Transaction Types were divided by risk and their frequencies were distributed accordingly. 
+
+#Tran Type Percentage Distribution Table:
+#Transaction Type	Green	Yellow	Red
+#Cash Advance	        5	15  25
+#Cash Payment			5	10	20
+#Purchase				60	40	20
+#Payment				20	10	5
+#Payment Reversal		1	5	0
+#Wire Transfer			3	0	10
+#Void					3	10	0
+#Refund					3	10	20
+#						100	100	100
+
+#Country Risk is distrubuted in three categories from the US AML Risk Guide Table 
+
 Country = ['AF', 'AO', 'AZ', 'BD', 'BY', 'BZ', 'BO', 'MM', 'KH', 'KM', 'CD', 'CI', 'CU', 'GN', 'GW', 'GY', 'HT', 'ID', 'IR', 'IQ', 'KZ', 'KE', 'KP', 'LA', 'LB', 'LR', 'LY', 'NG', 'PK', 'PG', 'PY', 'SL', 'SX', 'SO', 'SD', 'SY', 'TH', 'TR', 'VE', 'VN', 'YE', 'ZW', 'AL', 'DZ', 'AD', 'AI', 'AR', 'AW', 'BS', 'BJ', 'BM', 'BA', 'BR', 'VG', 'BN', 'BF', 'BI', 'KY', 'CF', 'TD', 'CN', 'CO', 'CK', 'CR', 'CY', 'DM', 'DO', 'EC', 'EG', 'GQ', 'ER', 'GA', 'GM', 'GH', 'GI', 'GR', 'GD', 'GT', 'GG', 'HN', 'IM', 'JP', 'JE', 'JO', 'KR', 'KW', 'KG', 'LI', 'LU', 'MO', 'MG', 'MW', 'MY', 'MV', 'ML', 'MH', 'MR', 'MX', 'MD', 'MC', 'MN', 'MS', 'MA', 'MZ', 'NP', 'NI', 'NE', 'PW', 'PA', 'PE', 'PH', 'RO', 'RU', 'KN', 'LC', 'VC', 'WS', 'ST', 'SA', 'SN', 'SC', 'SB', 'SS', 'LK', 'SR', 'SZ', 'TJ', 'TZ', 'TG', 'TO', 'TT', 'TN', 'TM', 'UG', 'UA', 'UY', 'UZ', 'VU', 'EH', 'ZM']
 Merchant_Category = ['4789', '4821', '4829', '5094', '5933', '5944', '6010', '7699', '7994', '7995', '9950']
 Transaction_Type = ['Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Purchase', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Advance', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Cash Payment', 'Payment', 'Payment', 'Payment', 'Payment', 'Payment', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Wire Transfer', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund', 'Refund']
@@ -985,7 +1004,7 @@ with open('CreditCard_Transaction_Red.csv','w') as f1:
     writer.writerow(['rownum'] +['Account_Number'] + ['Merchant_Name']+['Merchant_Category_Code']+['Merchant_Category_Desc'] +\
 	['Post_Date'] + ['Transaction_Date'] + ['Transaction_Type'] +['Merchant_Country'])
 	
-    for i in range(10000000):
+    for i in range(10):
 		dt=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 		row = [str(i)+'_'+dt]+[random.choice(python_account_ID.accountid)] +[gen_data.create_company_name()] 
 		cat=random.choice(Merchant_Category)
