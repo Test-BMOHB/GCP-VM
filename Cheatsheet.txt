@@ -122,3 +122,9 @@ sudo mkdir $HOME/db ; sudo mongod --dbpath $HOME/db --port 80 --fork \
 After you enter the final command, click Done and then confirm that you want to leave the page to close the SSH browser window.
 INSTALLING PANDAS ON UBUNTU...WHAT A PAIN IN THE NECK..
 sudo apt-get install python-pandas
+
+
+15Dec2015 *************************************
+Installing scapy a python webcrawler on the GCP VM
+http://doc.scrapy.org/en/latest/topics/ubuntu.html#topics-ubuntu
+Follow the steps 1,2,3...done!!
