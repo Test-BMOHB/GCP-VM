@@ -128,3 +128,8 @@ sudo apt-get install python-pandas
 Installing scapy a python webcrawler on the GCP VM
 http://doc.scrapy.org/en/latest/topics/ubuntu.html#topics-ubuntu
 Follow the steps 1,2,3...done!!
+
+
+********************************
+Set up email on the server
+http://www.havetheknowhow.com/Configure-the-server/Install-ssmtp.html
