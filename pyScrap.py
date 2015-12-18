@@ -88,10 +88,10 @@ def scrapInfo(mainURL, mainContent, xPath):
             text = numReplace.sub('90', text)
 ##  Finds phone numbers in the text within the HTML
 ##  10 digit regex
-            phonenumbers = re.findall(r'\d{3}[^a-zA-Z]*\d{3}[^a-zA-Z]*\d{4}|\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d',text)
+            phonenumbers = re.findall(r'\d{3}[^a-zA-Z]*\d{3}[^a-zA-Z]*\d{4}|\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d|\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d',text)
 ##  11 digit regex
             if not phonenumbers:
-                phonenumbers = re.findall(r'1\d{3}[^a-zA-Z]*\d{3}[^a-zA-Z]*\d{4}|1[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d',text)
+                phonenumbers = re.findall(r'1\d{3}[^a-zA-Z]*\d{3}[^a-zA-Z]*\d{4}|1[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d[.]*\d|1\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d[-]*\d',text)
             if phonenumbers:
                 for number in phonenumbers:
                     number = number.replace(' ','')
@@ -136,6 +136,8 @@ def scrapInfo(mainURL, mainContent, xPath):
 ##  Function to remove duplicate list entries
 def removeDuplicates(dedup):
     count1 = 0
+    finalList = []
+    print len(dedup)
     for i in dedup:
         count2 = 0
         for e in dedup:
@@ -143,14 +145,30 @@ def removeDuplicates(dedup):
             if count1 == count2:
                 continue
             else:
+## If all information is the same, delete the list entry
                 if i == e:
-                    dedup.remove(e)
+                    dedup.pop(count2)
 ## If all information is the same except for the backpage link, delete the list entry
-                elif i[0] == e[0] and i[1] == e[1] and i[2] == e[2] and i[3] != e[3]:
-                    dedup.remove(e)
+                if i[0] is not None and e[0] is not None:
+                    if i[1] is not None and e[1] is not None:
+                        if i[2] is not None and e[2] is not None:
+                            if i[0] == e[0] and i[1] == e[1] and i[2] == e[2]:
+                                dedup.pop(count2)
+                        else:
+                            if i[0] == e[0] and i[1] == e[1]:
+                                dedup.pop(count2)
+                    elif i[2] is not None and e[2] is not None:
+                        if i[0] == e[0] and i[2] == e[2]:
+                                dedup.pop(count2)
+                    else:
+                        if i[0] == e[0]:
+                                dedup.pop(count2)
             count2 = count2 + 1
         count1 = count1 + 1
-    return dedup
+    for i in dedup:
+        finalList.append(i)
+    print len(finalList)
+    return finalList
 
 ##  Function to create the CSV file
 def createCSV(liCSV, f1):
@@ -199,8 +217,10 @@ def main():
         if increment == 1:
             mainRequest = requests.get(mainURL + "adult/")
         else:
-##  To only print one page, comment out the mainRequest line and uncomment the break line                    
-##            break
+##  To only print one page, change the increment if statement to == 2
+##  To print all page's in a day, comment out the if statement below
+            if increment == 3:
+                currDate = ''
             mainRequest = requests.get(mainURL + "adult/?page=" + str(increment))
         mainContent = html.fromstring(mainRequest.content)
         date = mainContent.xpath('//*[@class="date"]')
@@ -221,6 +241,7 @@ def main():
             print "Sponsor Scrap"
             liData.extend(scrapInfo(mainURL, mainContent, '//*[@class="sponsorBoxContent"]/a'))
             endTimer(startT)
+        else:
             startT = startTimer()
             print "Remove Dups from Scrap"
             liData = removeDuplicates(liData)
@@ -239,7 +260,6 @@ def main():
                 print "Create CSV for HTML"
                 createCSV(liHTML, htmlFile)
                 endTimer(startT)
-        else:
             endTime = time.time()
             totTime = endTime - startTime
             totTime = ("{0:.1f}".format(round(totTime,2)))
