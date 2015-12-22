@@ -144,3 +144,11 @@ nano index.html
 have fun!!!
 on the instance console page there will be an IP..that the one for the index.html..
 
+
+************************** NEEDS FURTHER WORK  NOT TESTED **************************
+python gcloud package , this allows gcloud commands using python code...
+1. install python-develop
+sudo apt-get install python-dev
+2. install pycrypto
+sudo pip install pycrypto
+
