@@ -133,3 +133,14 @@ Follow the steps 1,2,3...done!!
 ********************************
 Set up email on the server
 http://www.havetheknowhow.com/Configure-the-server/Install-ssmtp.html
+
+
+******************************************
+SET UP AN APACHE WEB SERVER
+sudo apt-get install apache2
+cd .. 3 times
+cd var/www/html
+nano index.html
+have fun!!!
+on the instance console page there will be an IP..that the one for the index.html..
+
