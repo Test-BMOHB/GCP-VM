@@ -5,6 +5,7 @@
 # sudo apt-get install python-dev
 # sudo pip install pycrypto
 # pip install --upgrade google-api-python-client
+#  pip install --upgrade gcloud
 # ref website
 # https://googlecloudplatform.github.io/gcloud-python/stable/storage-buckets.html
 #https://cloud.google.com/python/
