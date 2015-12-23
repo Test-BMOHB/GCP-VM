@@ -1,0 +1,47 @@
+
+# Moving strings/objects/file between VM and Data storage via python
+# Install these modules
+
+# sudo apt-get install python-dev
+# sudo pip install pycrypto
+# pip install --upgrade google-api-python-client
+# ref website
+# https://googlecloudplatform.github.io/gcloud-python/stable/storage-buckets.html
+#https://cloud.google.com/python/
+
+
+#fetch a file and pass into python string and print it
+from gcloud import storage
+
+gcs = storage.Client(project='project id')
+bucket = gcs.get_bucket('cloud storage bucket')
+blob = bucket.get_blob('name of file')
+
+print blob.download_as_string()
+
+
+
+from gcloud import storage
+
+gcs = storage.Client(project='your-project-id')
+bucket = gcs.get_bucket('your-bucket-id')
+
+blob = storage.Blob('example.txt', bucket=bucket)
+blob.upload_from_string('Hello, world!')
+
+print(blob.download_as_string())
+
+from gcloud import datastore
+
+
+dataset = datastore.Client(dataset_id='my-project-id')
+
+entity = datastore.Entity(key=dataset.key('Greeting'))
+entity['message'] = 'Hello, world!'
+
+dataset.put(entity)
+
+query = dataset.query(kind='Greeting')
+for result in query.fetch():
+    print(result)
+
