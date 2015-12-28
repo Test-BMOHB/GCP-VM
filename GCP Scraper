@@ -1,0 +1,41 @@
+Install Reqeusts
+http://docs.python-requests.org/en/latest/user/install/
+Install beautifulSoup
+http://www.crummy.com/software/BeautifulSoup/bs4/download/4.4/
+or use pip install beautifulsoup4
+
+# not tested on GCP only local computer
+#  https://www.youtube.com/watch?v=3xQTJi2tqgk %(link.get("href"), link.text)  ,{"name": "lt_Headline"}
+#  This code scrapes the business website for the daily globe and mail, business section
+# is grabs all <a>...</a> content and scrapes href and title
+import re 
+import requests
+from bs4 import BeautifulSoup
+#declare two lists
+linkslist=[]
+titlelist=[]
+bofem = []n
+#declare website variable
+url = ("http://www.theglobeandmail.com/report-on-business")
+
+r = requests.get(url)
+#print r.content
+soup = BeautifulSoup(r.content, "html.parser")
+print soup
+print soup.prettify
+#target all html inside of a a tag
+links = soup.find_all("a")
+#target all html inside of a a tag with a link and a title
+#loop through page and create linkslist python list and titlelist list
+for link in links:
+	if 'report-on-business' in 	link.get("href"):
+		try:
+			print "link!!!!!!!",  link.get("href"), "!!!!!!!!TITLE!!!!!!!!!",link.get("title")
+		except:
+			pass
+		# try:
+			# print "text!!!!!!!!!!!!!!!!!!", link.text
+		# except:
+			# pass
+		linkslist.append(link.get("href"))
+		titlelist.append(link.get("title"))
