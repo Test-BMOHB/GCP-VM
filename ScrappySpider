@@ -1,0 +1,65 @@
+http://doc.scrapy.org/en/latest/intro/tutorial.html
+
+http://doc.scrapy.org/en/latest/intro/install.html
+
+https://pypi.python.org/pypi/pypiwin32
+Open a project in scrapy....
+scrapy startproject thenameoftheproject
+
+
+
+#das spider in das spider folder name file globeandmailspider.py
+
+import scrapy
+
+from globeandmail.items import globeandmailItem
+
+
+class globeandmailspider(scrapy.Spider):
+    name = "globeandmail"
+    allowed_domains = ["http://www.theglobeandmail.com/"]
+    start_urls = ["http://www.theglobeandmail.com/report-on-business"]
+	 
+    # def parse(self, response):
+        # for href in response.css("ul.directory.dir-col > li > a::attr('href')"):
+            # url = response.urljoin(href.extract())
+            # yield scrapy.Request(url, callback=self.parse_dir_contents)
+
+    def parse(self, response):
+        for sel in response.xpath('//h5/a'):
+            item = globeandmailItem()
+            item['title'] = sel.xpath('a/title').extract()
+            item['link'] = sel.xpath('a/@href').extract()
+            item['desc'] = sel.xpath('a/text()').extract()
+            yield item
+            
+            
+            
+#das values in the top level folder name the file items.py 
+
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+
+class globeandmailItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    desc = scrapy.Field()
+    
+    
+  Call the spider to crawl at the cmd line top folder level
+  scrapy crawl thespidername
+  Add some syntax to create an output folder with CSV's...
+  scrapy crawl thespidername -o items.csv
+        
+
+
+
+
+    
