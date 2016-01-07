@@ -2,7 +2,7 @@
 #Date         : 2015-12-10
 #Program Name : Credit Card Transactions Scenario - Overpayment
 #Version#     :1
-#Description  : Code that generates debit and credit transactions with refunds
+#Description  : Code that generates credit card transactions and scenarios
 #-----------------------------------------------------------------------------
 # History  | ddmmyyyy  |  User     |                Changes       
 #          | 11122015  | Ivana D.  | Intial Coding Steps 
