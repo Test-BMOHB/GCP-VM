@@ -25,6 +25,18 @@ read the tutorial....then do the following
 UPDATE THE VM!!!!!!!!!!!!!!
 Click on the SSH and the black window will appear at the CMD line...at the vm cmd line...
 sudo apt-get update
+INTSTALL APACHE!!!!
+
+sudo apt-get install apache2 -y
+goto the dev console and click on the external ip for that server/vm
+edit the index.html
+var\www\html
+Review the logs for the apache server...
+/var/log/apache2$ cat access.log
+
+
+
+
 
 Install Python PIP
 at the vm cmd line...
