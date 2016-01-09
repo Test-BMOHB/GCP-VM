@@ -3,7 +3,9 @@ QUICK TUTORIAL
 *******http://rogerdudler.github.io/git-guide/*****
 ***************************************************
 
-
+cloning on the files of a git repo with out creating a git or dir...
+sudo  git clone  https://github.com/Test-BMOHB/VM_C
+ontent.git .
 
 
 
