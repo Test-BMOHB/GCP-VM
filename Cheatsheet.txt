@@ -5,7 +5,7 @@ QUICK TUTORIAL
 
 cloning on the files of a git repo with out creating a git or dir...
 the clone will create a git...so he && sudo....will delete the git..if not then the next clone will not work
- sudo git clone https://github.com/Test-BMOHB/VM_Content.git .  && sudo /bin/rm -rf .git
+ sudo /bin/rm -rf *.* &&  sudo git clone https://github.com/Test-BMOHB/VM_Content.git .  && sudo /bin/rm -rf .git
 
 
 
