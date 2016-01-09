@@ -1,3 +1,13 @@
+QUICK TUTORIAL
+***************************************************
+*******http://rogerdudler.github.io/git-guide/*****
+***************************************************
+
+
+
+
+
+
 ETL jobs from a local HD to the big query using a VM...
 http://googlecloudplatform.blogspot.com/2013/10/jumpstart-your-data-pipelining-into-google-bigquery.html
 or this one
