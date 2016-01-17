@@ -1,0 +1,65 @@
+Hi Gang!
+Inspiring Websites:
+https://www.huyng.com/posts/python-performance-analysis
+
+Line by line assessment of speed...
+https://github.com/rkern/line_profiler/tree/19603402e8686407dd19882fd80764d15b2f8499
+A line profiler
+pip install line_profiler     
+
+Memory Profilers
+pip install -U memory_profiler
+pip install psutil
+
+Decorate your code that you want to assess 
+@profile
+
+Like this...
+import time
+@profile # <================== decorator
+def time_usage(func):
+    def wrapper(*args, **kwargs):
+        beg_ts = time.time()
+        func(*args, **kwargs)
+        end_ts = time.time()
+        print("elapsed time: %f" % (end_ts - beg_ts))
+    return wrapper
+
+@time_usage
+def test():
+    for i in xrange(0, 10000): 
+		d = i * (i +1)
+		print i
+		print i + 1
+		print d
+    pass
+
+if __name__ == "__main__":
+    test()
+	
+To see line by line time	
+USe kernprof.py to run your script.
+
+kernprof.py -l -v fib.py
+
+Then View it...
+ python -m line_profiler script_to_profile.py.lprof
+
+To see memory
+https://github.com/fabianp/memory_profiler
+python -m memory_profiler primes.py
+
+To see objects
+http://mg.pov.lt/objgraph/
+ Download Graphviz
+ http://www.graphviz.org/Download_windows.php
+ 
+ 
+
+
+
+
+
+
+
+
