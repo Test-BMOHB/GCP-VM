@@ -175,4 +175,11 @@ python gcloud package , this allows gcloud commands using python code...
 sudo apt-get install python-dev
 2. install pycrypto
 sudo pip install pycrypto
+*************************************************
+Hadoop
+at the SSH cmd line import a file from cloud storage
+
+cp gs://bucket/filename .  <======================== don't forget the period or add  a destination for the file
+Run a file in a hadoop job
+gcloud beta dataproc jobs submit pyspark --cluster cluster-1test  hello-world.py
 
