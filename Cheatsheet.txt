@@ -1,4 +1,7 @@
 QUICK TUTORIAL
+
+make yourself into root..    sudo -s
+
 ***************************************************
 *******http://rogerdudler.github.io/git-guide/*****
 ***************************************************
