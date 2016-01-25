@@ -1,5 +1,7 @@
 QUICK TUTORIAL
 
+alt to nano   -e filename
+
 make yourself into root..    sudo -s
 
 ***************************************************
