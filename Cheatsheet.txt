@@ -188,3 +188,11 @@ cp gs://bucket/filename .  <======================== don't forget the period or 
 Run a file in a hadoop job
 gcloud beta dataproc jobs submit pyspark --cluster cluster-1test  hello-world.py
 
+sudo git clone https://github.com/TestBMOHB03/Credit-Card-Model.git 
+              (actual git repository)
+
+cd to directory where the changes were made to git repository
+sudo git commit -am TestBMOHB03/Credit-Card-Model
+
+sudo git push -u https://github.com/TestBMOHB03/Credit-Card-Model.git master
+                 (git repository)
