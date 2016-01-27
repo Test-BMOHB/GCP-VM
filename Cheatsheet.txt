@@ -188,6 +188,8 @@ cp gs://bucket/filename .  <======================== don't forget the period or 
 Run a file in a hadoop job
 gcloud beta dataproc jobs submit pyspark --cluster cluster-1test  hello-world.py
 
+
+Clone and push changes to git repository
 sudo git clone https://github.com/TestBMOHB03/Credit-Card-Model.git 
               (actual git repository)
 
