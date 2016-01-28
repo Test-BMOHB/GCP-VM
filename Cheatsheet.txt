@@ -1,5 +1,5 @@
 QUICK TUTORIAL
-
+gcloud config set project  <project name>
 alt to nano   -e filename
 
 make yourself into root..    sudo -s
