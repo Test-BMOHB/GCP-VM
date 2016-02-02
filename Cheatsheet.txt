@@ -193,6 +193,9 @@ Clone and push changes to git repository
 sudo git clone https://github.com/TestBMOHB03/Credit-Card-Model.git 
               (actual git repository)
 
+sudo git add .
+adds everything to the commit
+
 cd to directory where the changes were made to git repository
 sudo git commit -am TestBMOHB03/Credit-Card-Model
 
