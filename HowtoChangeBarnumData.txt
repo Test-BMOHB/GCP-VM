@@ -1,0 +1,28 @@
+When I use the default barnum install, I can do this:
+IPython 4.0.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: from barnum import gen_data
+
+In [2]: len(gen_data.last_names)
+Out[2]: 5001
+
+As you can see there are 5001 valid last names that I am choosing from.
+If I place your source-data.pkl file in the repo, I see this:
+
+In [1]: from barnum import gen_data
+
+In [2]: len(gen_data.last_names)
+Out[2]: 41759
+
+Is it possible that you don't have the source-data,pkl in the right place?
+In order to see where the script is looking, try this:
+In [3]: gen_data.DIRNAME
+Out[3]: '/home/chris/miniconda3/envs/barnum2/lib/python2.7/site-packages/barnum'
+
+Ultimately, I think the issue is that barnum is looking for the .pkl file and finding the original one and not the new one you created.
+
+More to come once this is tested...
