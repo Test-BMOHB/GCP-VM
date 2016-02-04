@@ -12,6 +12,20 @@ cloning on the files of a git repo with out creating a git or dir...
 the clone will create a git...so he && sudo....will delete the git..if not then the next clone will not work
  sudo /bin/rm -rf *.* &&  sudo git clone https://github.com/Test-BMOHB/VM_Content.git .  && sudo /bin/rm -rf .git
 
+*********************************
+mounting a disk to the linux VM
+*********************************
+view this link and the video inside..
+https://cloud.google.com/compute/docs/disks/persistent-disks
+
+command...
+sudo /usr/share/google/safe_format_and_mount /dev/sdb /mnt/new_disk/
+
+
+
+
+
+
 
 
 
