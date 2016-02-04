@@ -56,6 +56,10 @@ read the tutorial....then do the following
 UPDATE THE VM!!!!!!!!!!!!!!
 Click on the SSH and the black window will appear at the CMD line...at the vm cmd line...
 sudo apt-get update
+UPDATE Cloud SDK Components
+sudo gcloud components update
+
+
 INTSTALL APACHE!!!!
 
 sudo apt-get install apache2 -y
