@@ -33,7 +33,11 @@ Test installation: run python then type import nltk
 
 
 
-
+How to copy files from one vm to another
+https://cloud.google.com/compute/docs/instances/connecting-to-instance#sshingcloud
+you'll need to id the region in the copy files statment or it'll prompt also it'll use a SSH key that will 
+build before the transfer
+gcloud compute copy-files example-instance:example-file.txt example-file.txt
 
 
 ETL jobs from a local HD to the big query using a VM...
