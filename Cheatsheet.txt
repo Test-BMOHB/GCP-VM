@@ -22,7 +22,14 @@ command...
 sudo /usr/share/google/safe_format_and_mount /dev/sdb /mnt/new_disk/
 
 
+MISC Python modules
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
 
+
+Natural Language Kit...
+Install NLTK: run sudo pip install -U nltk
+Install Numpy (optional): run sudo pip install -U numpy
+Test installation: run python then type import nltk
 
 
 
