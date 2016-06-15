@@ -239,3 +239,6 @@ sudo pip uninstall crcmod
 sudo pip install -U crcmod
 
 Reference:  https://cloud.google.com/storage/docs/gsutil/addlhelp/CRC32CandInstallingcrcmod
+
+Create an Image on a new project from a Disk on a different project
+gcloud compute images create <NEW IMAGE NAME> --source-disk /<SOURCE PROJECT>/<SOURCE ZONE>/<SOURCE IMAGE> --source-disk-zone <DESTINATION ZONE> --project <DESTINATION PROJECT>
